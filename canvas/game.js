@@ -10,9 +10,20 @@ s.vx = 5;
 s.vy = 9;
 
 
+var ballColor = ["red", "blue", "yellow", "gray", "black", "green", "orange", "purple"];
+
+function rand(low, high)
+{
+    return Math.random()*(high - low) + low;
+}
+
 function main()
 {
     ctx.clearRect(0,0,canvas.width,canvas.height);
+    var newColor = ballColor[Math.round(rand(0,7))];
+    console.log(newColor);
+
+    s.color = newColor;
 
     if(s.x >= canvas.width - s.w)
     {
